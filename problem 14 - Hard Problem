@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+ 
+int main(){
+    int n;
+    cin >>n;
+    
+    while(n--){
+        int m,a,b,c;
+        
+        cin>>m>>a>>b>>c;
+        
+        int ans=0;
+        if(m>=a){
+            ans+=a;
+        }
+        else{
+            
+            ans+=m;
+        }
+        
+        if(m>=b){
+            ans+=b;
+        }
+        else{
+            ans+=m;
+        }
+        int x=2*m-ans;
+        if(x>=c){
+            ans+=c;
+        }
+        else{
+            ans+=x;
+        }
+        cout << ans << endl;
+    }
+    return 0;
+}
