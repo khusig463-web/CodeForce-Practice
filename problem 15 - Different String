@@ -1,0 +1,38 @@
+#include <iostream>
+#include <algorihtm>
+using namespace std;
+ 
+int main(){
+    int n;
+    cin >>n;
+    
+    while(n--){
+        string s;
+        cin>>s;
+        
+        bool same=true;
+        
+        for(int i=1;i<s.size();i++){
+            if(s[i]!=s[i-1]){
+                same=false;
+            }
+        }
+        if(same){
+            cout <<"NO"<<endl;
+        }
+        else{
+            cout <<"YES"<<endl;
+            string t=s;
+            sort(t.begin(),t.end());
+            
+            if(s!=t){
+                cout << t <<endl;
+            }
+            else{
+                reverse(t.begin(),t.end());
+                cout << t << endl;
+            }
+        }
+    }
+    return 0;
+}
