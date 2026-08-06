@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    // Optimize standard input/output operations for speed
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int n;
+    long long x; // Use 64-bit integer to prevent data overflow
+    cin >> n >> x;
+    
+    long long distressed_kids = 0;
+    
+    for (int i = 0; i < n; ++i) {
+        char type_char;
+        long long d;
+        cin >> type_char >> d;
+        
+        if (type_char == '+') {
+            x += d; // Carrier arrives: increase stock
+        } else if (type_char == '-') {
+            if (x >= d) {
+                x -= d; // Child gets ice cream: decrease stock
+            } else {
+                distressed_kids++; // Not enough stock: child leaves sad
+            }
+        }
+    }
+    
+    // Print the final ice cream count and distressed children count
+    cout << x << " " << distressed_kids << "\n";
+    
+    return 0;
+}
