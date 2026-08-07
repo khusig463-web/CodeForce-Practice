@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
+void solve() {
+    string s;
+    cin >> s;
+    
+    // Convert the 4-character string to an integer
+    int year = stoi(s);
+    
+    // Find the integer square root
+    int root = round(sqrt(year));
+    
+    // Check if it is a perfect square
+    if (root * root == year) {
+        // Since any valid pair works, a = 0 and b = root is the simplest choice
+        cout << 0 << " " << root << "\n";
+    } else {
+        cout << -1 << "\n";
+    }
+}
+
+int main() {
+    // Optimize standard I/O operations for performance
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+    
+    return 0;
+}
