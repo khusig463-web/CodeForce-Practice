@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int n, m;
+    if (cin >> n >> m) {
+        int count = 0;
+        
+        // Loop through all possible values of a
+        for (int a = 0; a * a <= n; ++a) {
+            // From the first equation: b = n - a^2
+            int b = n - a * a;
+            
+            // Check if this pair satisfies the second equation and b >= 0
+            if (b >= 0 && (a + b * b == m)) {
+                count++;
+            }
+        }
+        
+        cout << count << endl;
+    }
+    return 0;
+}
