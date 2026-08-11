@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+void solve() {
+    int n, m;
+    cin >> n >> m;
+    // Formula to calculate ceiling of (n * m) / 2 using integer arithmetic
+    cout << (n * m + 1) / 2 << "\n";
+}
+
+int main() {
+    int t;
+    cin >> t; // Number of test cases
+    while (t--) {
+        solve();
+    }
+    return 0;
+}
