@@ -1,0 +1,31 @@
+A) Two Vessels, Time limit exceeded on test 1, #, Copy
+#include <iostream>
+using namespace std;
+ 
+int main(){
+    int n;
+    cin>>n;
+    
+    while(n--){
+        int a,b,c;
+        cin>>a>>b>>c;
+        
+        int co=0;
+        while(a!=b){
+            
+            if(a<b && b>=c){
+                a+=c;
+                b=b-c;
+            }
+            else if(a>b && a>=c){
+                b+=c;
+                a=a-c;
+            }
+            co++;
+        }
+        cout << co << endl;
+    }
+    return 0;
+}
+→Judgement Protocol
+Test: #1, time: 1000 ms., memory: 0 KB, exit code
