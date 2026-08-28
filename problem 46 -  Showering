@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+ 
+int main(){
+    int t;
+    cin>>t;
+    
+    while(t--){
+        int n,s,m;
+        cin>>n>>s>>m;
+        int interval=0;
+        int prev=0;
+        while(n--){
+            int a,b;
+            cin>>a>>b;
+            
+            int i=a-prev;
+            interval=max(i,interval);
+            
+            prev=b;
+        }
+        
+        int i=m-prev;
+        interval=max(i,interval);
+        
+        if(s<=interval){
+            cout << "YES"<<endl;
+        }
+        else{
+            
+            cout << "NO"<<endl;
+        }
+        
+    }
+    return 0;
+    
+}
