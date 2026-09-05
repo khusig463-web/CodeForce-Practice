@@ -1,0 +1,32 @@
+#include <iostream>
+ 
+using namespace std;
+ 
+void solve() {
+    int n, a, b;
+    cin >> n >> a >> b;
+    
+    // Case 1: The entire permutations are identical
+    if (a == n && b == n) {
+        cout << "Yes\n";
+    } 
+    // Case 2: There is enough room to mismatch the remaining elements
+    else if (a + b <= n - 2) {
+        cout << "Yes\n";
+    } 
+    // Otherwise, it's impossible
+    else {
+        cout << "No\n";
+    }
+}
+ 
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+    return 0;
+}
