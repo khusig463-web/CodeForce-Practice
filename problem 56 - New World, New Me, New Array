@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cmath>
+#include <cstdlib>
+ 
+using namespace std;
+ 
+void solve() {
+    long long n, k, p;
+    cin >> n >> k >> p;
+    
+    // Get the absolute value of the target sum
+    long long abs_k = abs(k);
+    
+    // Check if the target sum is impossible to reach
+    if (abs_k > n * p) {
+        cout << -1 << "\n";
+    } else {
+        // Calculate the ceiling of abs_k / p
+        long long ans = (abs_k + p - 1) / p;
+        cout << ans << "\n";
+    }
+}
+ 
+int main() {
+    // Fast I/O
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+    
+    return 0;
+}
