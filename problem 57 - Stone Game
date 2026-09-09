@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+
+    while (t--) {
+        int n;
+        cin >> n;
+
+        vector<int> a(n);
+
+        int minPos = 0, maxPos = 0;
+
+        for (int i = 0; i < n; i++) {
+            cin >> a[i];
+
+            if (a[i] < a[minPos])
+                minPos = i;
+
+            if (a[i] > a[maxPos])
+                maxPos = i;
+        }
+
+        // Convert 0-based position to number of moves
+        int left = max(minPos, maxPos) + 1;
+
+        int right = max(n - minPos, n - maxPos);
+
+        int both = min(
+            minPos + 1 + n - maxPos,
+            maxPos + 1 + n - minPos
+        );
+
+        cout << min({left, right, both}) << endl;
+    }
+
+    return 0;
+}
