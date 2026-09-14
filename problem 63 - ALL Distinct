@@ -1,0 +1,39 @@
+#include <iostream>
+#include <vector>
+#include <unordered_set>
+
+void solve() {
+    int n;
+    std::cin >> n;
+    
+    std::unordered_set<int> unique_elements;
+    for (int i = 0; i < n; ++i) {
+        int val;
+        std::cin >> val;
+        unique_elements.insert(val);
+    }
+    
+    int u = unique_elements.size();
+    
+    // If the number of removed elements (n - u) is odd, 
+    // we must remove one more unique element to maintain parity.
+    if ((n - u) % 2 == 0) {
+        std::cout << u << "\n";
+    } else {
+        std::cout << u - 1 << "\n";
+    }
+}
+
+int main() {
+    // Fast I/O
+    std::ios_base::sync_with_stdio(false);
+    std::cin.tie(NULL);
+    
+    int t;
+    std::cin >> t;
+    while (t--) {
+        solve();
+    }
+    
+    return 0;
+}
