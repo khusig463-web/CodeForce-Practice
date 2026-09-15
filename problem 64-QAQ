@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    // Fast I/O
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    string s;
+    if (cin >> s) {
+        int total_q = count(s.begin(), s.end(), 'Q');
+        int left_q = 0;
+        int total_qaq = 0;
+        
+        for (char c : s) {
+            if (c == 'Q') {
+                left_q++;
+            } else if (c == 'A') {
+                int right_q = total_q - left_q;
+                total_qaq += left_q * right_q;
+            }
+        }
+        
+        cout << total_qaq << "\n";
+    }
+    
+    return 0;
+}
