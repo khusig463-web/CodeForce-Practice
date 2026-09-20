@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+void solve() {
+    int n, m;
+    cin >> n >> m;
+    
+    // Check if total moves are enough and the parity matches
+    if (n >= m && (n - m) % 2 == 0) {
+        cout << "Yes\n";
+    } else {
+        cout << "No\n";
+    }
+}
+
+int main() {
+    // Optimize standard I/O operations for competitive programming
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+    
+    return 0;
+}
