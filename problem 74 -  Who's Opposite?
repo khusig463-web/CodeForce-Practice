@@ -1,0 +1,40 @@
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+
+using namespace std;
+
+void solve() {
+    long long a, b, c;
+    cin >> a >> b >> c;
+    
+    // The absolute difference between opposite positions is exactly half the total population
+    long long diff = abs(a - b);
+    long long n = 2 * diff;
+    
+    // If any given number exceeds the total number of people in the circle, it is invalid
+    if (a > n || b > n || c > n) {
+        cout << -1 << "\n";
+        return;
+    }
+    
+    // Find the person opposite to c
+    if (c <= diff) {
+        cout << c + diff << "\n";
+    } else {
+        cout << c - diff << "\n";
+    }
+}
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+    
+    return 0;
+}
