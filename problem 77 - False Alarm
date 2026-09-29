@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+ 
+int main(){
+    int t;
+    cin>>t;
+    
+    while(t--){
+        int a,b;
+        cin>>a>>b;
+        
+        int c=0;
+        int arr[a];
+        int c1=0;
+        int c2=0;
+        for(int i=0;i<a;i++){
+            
+            cin>>arr[i];
+            
+            if(arr[i]==1){
+                c2=i;
+            }
+        }
+        for(int i=0;i<a;i++){
+            
+            
+            
+            if(arr[i]==1){
+                c1=i;
+                break;
+            }
+        }
+        c=c2-c1+1;
+        
+        if(b>=c){
+            cout <<"YES"<<endl;
+        }
+        else{
+            cout <<"NO"<< endl;
+        }
+        
+    }
+    return 0;
+}
