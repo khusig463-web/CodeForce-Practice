@@ -4,6 +4,7 @@
 
 using namespace std;
 
+
 void solve() {
     int t;
     if (!(cin >> t)) return;
