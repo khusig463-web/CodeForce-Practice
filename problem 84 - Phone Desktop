@@ -1,0 +1,37 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+void solve() {
+    int x, y;
+    cin >> x >> y;
+
+    // Minimum screens needed just for the 2x2 icons
+    int screens = (y + 1) / 2;
+
+    // Remaining empty slots in those screens for 1x1 icons
+    int remaining_cells = (screens * 15) - (y * 4);
+
+    // If we need more space for 1x1 icons, add extra screens
+    if (x > remaining_cells) {
+        int extra_needed = x - remaining_cells;
+        screens += (extra_needed + 14) / 15; // Ceil division
+    }
+
+    cout << screens << "\n";
+}
+
+int main() {
+    // Fast I/O
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+
+    return 0;
+}
